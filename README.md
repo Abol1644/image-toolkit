@@ -1,6 +1,6 @@
 # Image Toolkit
 
-A private, client-only image processing web app. Upload, edit and export images entirely in your browser — nothing is ever uploaded to a server.
+A client-only image processing web app. Upload, edit and export images entirely in your browser — nothing is ever uploaded to a server.
 
 ## Features
 
