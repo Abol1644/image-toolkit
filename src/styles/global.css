@@ -1,0 +1,220 @@
+:root {
+  --bg: #0f172a;
+  --bg-panel: #1e293b;
+  --bg-input: #0f172a;
+  --border: #334155;
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger: #ef4444;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+input,
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+input[type='number'] {
+  width: 84px;
+}
+
+input[type='range'] {
+  accent-color: var(--accent);
+  padding: 0;
+}
+
+input[type='checkbox'] {
+  accent-color: var(--accent);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 20px 24px 8px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+}
+
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 300px;
+  gap: 16px;
+  padding: 16px 24px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+  .app-side {
+    order: 2;
+  }
+  .app-editor {
+    order: 1;
+  }
+  .app-export {
+    order: 3;
+  }
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+.button {
+  background: var(--bg-input);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 12px;
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+
+.button-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-dim);
+  padding: 4px 8px;
+}
+
+.button-ghost:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.btn-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.segmented button {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  padding: 6px 12px;
+}
+
+.segmented button:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.segmented button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.hint {
+  color: var(--text-dim);
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+
+.error-banner {
+  margin: 8px 24px 0;
+}
+
+.error-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--danger);
+  color: #fecaca;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+}
+
+.app-footer {
+  padding: 12px 24px 20px;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-align: center;
+}
